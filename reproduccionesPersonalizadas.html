@@ -84,27 +84,27 @@
 			</div>
 
 			<!-- Titulo -->
-			<h1 class="titulo">ReparaTicos</h1>
+			<h1 class="textoTitulo titulo1">ReparaTicos</h1>
 
 			<hr />
 		</header>
 
 		<!-- Cuerpo Principal Pagina Inicio -->
 		<main>
-			<h1>Reproducciones de Juegos a Petición</h1>
+			<h1 class="textoTitulo titulo1">Reproducciones de Juegos a Petición</h1>
 			<!-- Sección de Información -->
 			<section>
-				<h2>Información basica</h2>
+				<h2 class="textoTitulo titulo2">Información basica</h2>
 
 				<!-- Información Servicio -->
-				<p>
+				<p class="textoParrafo">
 					La tienda ofrece un servicio de juegos personalizados a petición. Este
 					servicio se tiene que hacer a mano, por lo que cada pedido suele tomar
 					una semana completa en estar listo
 				</p>
 
 				<!-- Como se hace un cartucho -->
-				<p>
+				<p class="textoParrafo">
 					El proceso se hace tomando un cartucho y modificando su memoria para
 					que corra un juego diferente. Esto se puede hacer tanto en cartucho
 					originales como en cartuchos genericos, la unica diferencia es la
@@ -113,8 +113,10 @@
 				</p>
 
 				<!-- Presentaciones -->
-				<p>De momento el servicio cuenta con 3 presentaciones</p>
-				<ol type="I">
+				<p class="textoParrafo">
+					De momento el servicio cuenta con 3 presentaciones
+				</p>
+				<ol type="I" class="lista">
 					<li>Versión Solo Cartucho</li>
 					<li>Edición Caja Plastica</li>
 					<li>Edición Deluxe</li>
@@ -162,22 +164,92 @@
 							<td>X</td>
 							<td></td>
 							<td>X</td>
-							<td>X</td> 
+							<td>X</td>
 						</tr>
 					</tbody>
 				</table>
+				<br />
 
 				<!-- Como mandar a pedir uno -->
 			</section>
 
 			<!-- Formulario Consulta -->
 			<section>
+				<!-- Cuadro del formulario -->
 				<div>
-					<form action=""></form>
+					<!-- Inicio Formulario -->
+					<form action="" class="formularioJuegos">
+						<!-- Cuadro que rodea el formulario -->
+						<fieldset>
+							<!-- Pequeña leyenda sobre el formulario -->
+							<legend>Formulario para encargar un juego</legend>
+
+							<!-- Consola -->
+							<label for="consola">Consola: </label>
+							<input type="text" id="consola" required />
+
+							<!-- Juego a Reproducir -->
+							<br /><br />
+							<label for="juego">Juego a Reproducir: </label>
+							<input type="text" id="juego" required />
+
+							<!-- Nombre -->
+							<br /><br />
+							<label for="nombre">Nombre: </label>
+							<input type="text" id="nombre" required />
+
+							<!-- Apellido 1 -->
+							<br /><br />
+							<label for="apellido1">Apellido 1: </label>
+							<input type="text" id="apellido1" required />
+
+							<!-- Apellido 2 -->
+							<br /><br />
+							<label for="apellido2">Apellido 2: </label>
+							<input type="text" id="apellido2" />
+
+							<!-- Telefono -->
+							<br /><br />
+							<label for="telefono">Telefono: </label>
+							<input type="text" id="telefono" required />
+
+							<!-- Correo -->
+							<br /><br />
+							<label for="correo">Correo: </label>
+							<input type="text" id="correo" />
+
+							<!-- Color del cartucho -->
+							<p>Seleccione el color del cartucho:</p>
+
+							<input type="radio" id="select" value="1" name="colorCartucho" />
+							<label for="colorCartucho"> Negro </label>
+							<br />
+
+							<input type="radio" id="select" value="2" name="colorCartucho" />
+							<label for="colorCartucho"> Gris </label>
+							<br />
+
+							<input type="radio" id="select" value="3" name="colorCartucho" />
+							<label for="colorCartucho"> Transparente </label>
+
+							<!-- Versión de Producto -->
+							<p>Seleccione la versión que le interesa encargar:</p>
+
+							<input type="radio" id="select" value="1" name="edicion" />
+							<label for="edicion"> I(Solo Cartucho) </label>
+							<br />
+
+							<input type="radio" id="select" value="2" name="edicion" />
+							<label for="edicion"> II(Caja Plastica) </label>
+							<br />
+
+							<input type="radio" id="select" value="3" name="edicion" />
+							<label for="edicion"> III(Edición Deluxe) </label>
+						</fieldset>
+					</form>
 				</div>
 			</section>
 
-			<!--  -->
 			<hr />
 		</main>
 
@@ -188,33 +260,36 @@
 		<aside>
 			<div class="seccionNoticias">
 				<!-- Titulo Sección -->
-				<h2>Noticias y Curiosidades</h2>
+				<h2 class="textoTitulo titulo2">Noticias y Curiosidades</h2>
 
 				<!-- Noticia 1 -->
 				<div class="noticia">
 					<img
+						class="imagenNoticia"
 						src="/images/imagenesVarias/placeholder.webp"
 						alt="Imagen Noticia 1"
 						class="imagenNoticia" />
-					<h3>Titulo Noticia 1</h3>
+					<h3 class="tituloNoticia">Titulo Noticia 1</h3>
 				</div>
 
 				<!-- Noticia 2 -->
 				<div class="noticia">
 					<img
+						class="imagenNoticia"
 						src="/images/imagenesVarias/placeholder.webp"
 						alt="Imagen Noticia 1"
 						class="imagenNoticia" />
-					<h3>Titulo Noticia 2</h3>
+					<h3 class="tituloNoticia">Titulo Noticia 2</h3>
 				</div>
 
 				<!-- Noticia 3 -->
 				<div class="noticia">
 					<img
+						class="imagenNoticia"
 						src="/images/imagenesVarias/placeholder.webp"
 						alt="Imagen Noticia 1"
 						class="imagenNoticia" />
-					<h3>Titulo Noticia 3</h3>
+					<h3 class="tituloNoticia">Titulo Noticia 3</h3>
 				</div>
 			</div>
 			<hr />
@@ -230,19 +305,21 @@
 				<!-- Mensaje Legalidad Servicio -->
 				<section>
 					<div class="textoFooterMensajeLegal">
-						<h2>Legalidad Servicio</h2>
-						<p>
+						<h2 class="textoTitulo titulo2">Legalidad Servicio</h2>
+						<p class="textoParrafo">
 							Los nombres de productos, logotipos y marcas comerciales
 							pertinentes, registrados o no, son propiedad de sus respectivos
 							dueños. Se utilizan en este sitio web únicamente con fines de
 							identificación y compatibilidad de formatos. Su uso no implica
 							aprobación alguna.
 						</p>
-						<p>
+						<p class="textoParrafo">
 							NINTENDO® es una marca comercial de Nintendo Co., Ltd; GAMEBOY™ es
 							una marca comercial de Nintendo Co., Ltd.
 						</p>
-						<p>SEGA® es una marca registrada de SEGA Holdings Co., Ltd.</p>
+						<p class="textoParrafo">
+							SEGA® es una marca registrada de SEGA Holdings Co., Ltd.
+						</p>
 					</div>
 				</section>
 
@@ -250,16 +327,21 @@
 				<section>
 					<div class="textoFooterSocial">
 						<!-- Quienes Somos -->
-						<div class="textoQuienesSomos">
-							<a href="#" class="textoEnlace">Quienes Somos</a>
+						<div class="enlace">
+							<a href="/quienesSomos.html" class="textoEnlace"
+								><h2>Quienes Somos</h2></a
+							>
 						</div>
 
 						<!-- Contactenos -->
-						<div class="contactenos">
-							<a href="#" class="Contactenos">Contactenos</a>
+						<div class="enlace">
+							<a href="/contactenos.html" class="Contactenos"
+								><h2>Contactenos</h2></a
+							>
 						</div>
 
 						<!-- Redes Sociales -->
+						<h2 class="textoTitulo titulo2">Redes Sociales</h2>
 						<ul>
 							<!-- Facebook -->
 							<li>
@@ -298,6 +380,5 @@
 				<!-- Fin Cuadro Legal -->
 			</div>
 		</footer>
-		<!--  -->
 	</body>
 </html>
