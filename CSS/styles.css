@@ -1,3 +1,663 @@
-img {
+/* ------------------------------------------------------------------------ */
+/* Codigos Estandar Normalizacion */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0px;
+	background-color: #f5f3f7;
+}
+/* ------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------ */
+/* Formato Organización y Orden Elementos */
+/* Pagina Principal */
+.cuerpoPagina {
+	display: grid;
+
+	/* Cantidad de columnas*/
+	grid-template-columns: 5fr 1fr;
+
+	/* División de columnas*/
+	grid-gap: 20px;
+
+	/* Division del Area de trabajo */
+	grid-template-areas:
+		"navegacion 		navegacion"
+		"bannerMov			bannerMov"
+		"seccPrincipal 		aNoticias"
+		"footer				footer";
+}
+/* Configuración Posicion Elementos(grid-area) */
+/* Configuracion Barra Navegación */
+.barraNavegacion {
+	grid-area: navegacion;
+}
+
+/* Banner Principal Animado */
+.cuerpoPagina .bannerMovimiento {
+	grid-area: bannerMov;
+}
+
+/* Sección Contenido Principal Index */
+.cuerpoPagina .seccionPrincipal {
+	grid-area: seccPrincipal;
+}
+
+/* Sección Noticias */
+.cuerpoPagina .aNoticias {
+	grid-area: aNoticias;
+}
+
+/* Sección Footer */
+.footer {
+	grid-area: footer;
+}
+
+/* Formato Organización y Orden Elementos */
+/* Pagina Catalogo */
+.cuerpoCatalogo {
+	display: grid;
+
+	/* Cantidad de columnas*/
+	grid-template-columns: 1fr 4fr;
+
+	/* División de columnas*/
+	grid-gap: 15px;
+
+	/* Division del Area de trabajo */
+	grid-template-areas:
+		"navegacion 			navegacion"
+		"informacionImportante 	informacionImportante"
+		"filtros 				seccPrincipal"
+		"footer 				footer";
+}
+
+/* Configuración Posicion Elementos(grid-area) */
+/* Contenido Previo al Catalogo */
+.cuerpoCatalogo .informacionImportante {
+	grid-area: informacionImportante;
+}
+
+.cuerpoCatalogo .filtros {
+	grid-area: filtros;
+	margin-left: 10vw;
+}
+
+/* Catalogo Productos */
+.cuerpoCatalogo .productos {
+	grid-area: seccPrincipal;
+	margin-right: 10vw;
+}
+
+/* Formato Organización y Orden Elementos */
+/* Pagina General con Informacion */
+.cuerpoInformacionGeneral {
+	display: grid;
+
+	/* Cantidad de columnas*/
+	grid-template-columns: 3fr 1fr;
+
+	/* División de columnas*/
+	grid-gap: 15px;
+
+	/* Division del Area de trabajo */
+	grid-template-areas:
+		"navegacion 			navegacion"
+		"seccPrincipal 			aNoticias"
+		"footer 				footer";
+}
+
+/* Configuración Posicion Elementos(grid-area) */
+/* Bloque con Toda la Informacion Importante */
+.cuerpoInformacionGeneral .seccionPrincipal {
+	grid-area: seccPrincipal;
+	margin-left: 10vw;
+}
+
+/* Bloque Noticias */
+.cuerpoInformacionGeneral .aNoticias {
+	grid-area: aNoticias;
+	margin-right: 10vw;
+	justify-content: start;
+}
+
+/* Formato Organización y Orden Elementos */
+/* Pagina General con Informacion */
+.cuerpoNoticia {
+	display: grid;
+
+	/* Cantidad de columnas*/
+	grid-template-columns: 1fr;
+
+	/* División de columnas*/
+	grid-gap: 15px;
+
+	/* Division del Area de trabajo */
+	grid-template-areas:
+		"navegacion"
+		"seccPrincipal"
+		"footer";
+}
+
+/* Configuración Posicion Elementos(grid-area) */
+/* Bloque con Toda la Informacion Importante */
+.cuerpoNoticia .contenedorNoticia {
+	grid-area: seccPrincipal;
+	width: 65%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------ */
+/* Configuración "display:flex" para elementos dentro del Grid*/
+/* Index */
+.seccionPrincipal {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Sección Noticias */
+.aNoticias {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+}
+
+/* Sección Footer */
+.footer {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.footer2 {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+/* Consolas/Accesorios Segunda Mano */
+.productos {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.cuadroProducto {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: fit-content;
+	height: auto;
+}
+
+.articulo {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Sección Información General */
+
+/* ------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------ */
+/* Modificaciones Tamaño Elementos */
+/* Index */
+.nav-link {
+	font-size: 1.8vh;
+}
+
+.navbar img {
+	width: 15vh;
+	height: auto;
+}
+
+.bannerEstatico {
+	/* Este display flex es para alinear los contenidos del div */
+	display: flex;
+	text-align: center;
+	align-items: center;
+	text-decoration: none;
+	justify-content: center;
+	border-radius: 10px;
+	margin: 5px;
+
+	/* Configuración Imagen Fondo  */
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.carousel-item {
+	height: 350px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+	z-index: 200;
+}
+
+.banner1 {
+	flex: 52%;
+	height: auto;
+	background-image: url(/images/paginaPrincipal/cartuchosPersonalizadosBanner.webp);
+}
+
+.banner2 {
+	flex: 45%;
+	height: auto;
+	background-image: url(/images/paginaPrincipal/modificacionesConsolasRetrohd1.webp);
+}
+
+.banner3 {
+	flex: 32%;
+	height: auto;
+	background-image: url(/images/paginaPrincipal/consolasRetro.png);
+}
+
+.banner4 {
+	flex: 32%;
+	height: auto;
+	background-image: url(/images/paginaPrincipal/juegosSegundaManoBanner.webp);
+}
+
+.banner5 {
+	flex: 32%;
+	height: auto;
+	background-image: url(/images/paginaPrincipal/liberacionConsolasBannerOscura.webp);
+}
+
+/* Productos */
+.cuadroProducto {
+	flex: 3;
+	background-color: white;
+	height: auto;
+	border: solid darkgrey 2px;
+	border-radius: 10px;
+	text-align: center;
+	margin: 10px;
+}
+
+.imagenProducto {
+	width: 200px;
+	max-height: 200px;
+}
+
+/* Mantenimiento Consolas */
+.videoInsertado {
+	width: 244px;
+	height: 442px;
+}
+
+/* Usados por Varias Paginas */
+/* Sección Noticias */
+.noticia {
+	border: solid black 3px;
+	border-radius: 10px;
+	text-align: center;
+	margin-bottom: 10px;
+	overflow: hidden;
+	background-color: white;
+}
+
+/* Sección Footer */
+.contenedorFooter {
+	margin: 5px;
+}
+
+.footer1 {
+	flex: 2;
+}
+
+.footer2 {
+	flex: 1;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------ */
+/* Web Responsive */
+/* Banner Estaticos Index */
+@media (max-width: 800px) {
+	/* Acomodo Datos Index*/
+	.cuerpoPagina {
+		grid-template-areas:
+			"navegacion 	navegacion"
+			"bannerMov		bannerMov"
+			"seccPrincipal 	seccPrincipal"
+			"aNoticias 		aNoticias"
+			"footer			footer";
+	}
+	/* Tamaño elementos Index*/
+	.carousel-item {
+		height: auto;
+		max-block-size: 300px;
+	}
+
+	.cuerpoPagina .bannerEstatico {
+		flex: 100%;
+		height: 150px;
+	}
+
+	.aNoticias {
+		align-items: end;
+		width: 50%;
+	}
+
+	.footer1,
+	.footer2 {
+		flex: 100%;
+		height: auto;
+	}
+
+	/* Acomodo Datos Pagina Informacion General*/
+	.cuerpoInformacionGeneral {
+		grid-template-areas:
+			"navegacion 	navegacion"
+			"seccPrincipal 	seccPrincipal"
+			"aNoticias 		aNoticias"
+			"footer			footer";
+	}
+
+	/* Tamaño elementos Pagina Informacion General*/
+	.cuerpoInformacionGeneral .seccionPrincipal {
+		margin-left: 0%;
+	}
+
+	.cuerpoInformacionGeneral .aNoticias {
+		margin: 0%;
+	}
+
+	/* Tamaño elementos Pagina Catalogo*/
+	.cuerpoCatalogo .filtros {
+		margin-left: 0%;
+	}
+
+	.cuerpoCatalogo .productos {
+		margin-right: 0%;
+	}
+
+	/* Elementos Noticias */
+	.cuerpoNoticia .contenedorNoticia {
+		width: 80%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+/* ------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------ */
+/* Formato Texto */
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+.textoLogo,
+.textoBanner {
+	font-family: "PT Serif", sans-serif;
+}
+
+.textoTitulo,
+.enlace {
+	font-family: "EB Garamond", sans-serif;
+}
+
+.textoBanner {
+	color: whitesmoke;
+	font-size: 40px;
+}
+
+.seccionPrincipal .textoTitulo {
+	align-self: center;
+}
+
+.informacionImportante .textoParrafo,
+.informacionImportante .textoTitulo {
+	width: 80%;
+}
+
+.enlace {
+	font-style: inherit;
+}
+
+.tituloFooter {
+	font-size: 25px;
+}
+
+.enlaceRedes {
+	font-size: 15px;
+}
+
+.textoProducto {
+	margin: 0;
+}
+
+.enlace {
+	text-decoration: none;
+	color: inherit;
+}
+
+.aNoticias .tituloNoticia {
+	text-align: center;
+	font-size: 1.5rem;
+	font-family: "PT Serif", sans-serif;
+}
+
+.cuerpoNoticia .tituloNoticia {
+	text-align: center;
+	font-size: 3rem;
+	font-family: "EB Garamond", sans-serif;
+	margin-top: 5vh;
+	margin-bottom: 3vh;
+}
+
+.cuerpoNoticia .textoNoticia {
+	font-size: 1.3rem;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------ */
+/* Formato Estetico y Configuraciones Varias */
+/* Index */
+.navbar,
+.encabezadoTabla {
+	background-color: #5c2c6d;
+	z-index: 10;
+}
+
+.navbar-toggler {
+	border: solid 2px #f5f3f7;
+}
+
+.navbar-toggler:focus {
+	border: none;
+}
+
+.nav-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	background-color: #462154;
+
+	border: solid 2px #f5f3f7;
+	border-radius: 15px;
+	margin: 4px;
+	height: auto;
+}
+
+.nav-item:hover,
+.navbar-brand:hover,
+.navbar-toggler:hover {
+	transform: scale(1.03);
+}
+
+.nav-link,
+.textoLogo {
+	color: #f5f3f7;
+}
+
+.nav-link:hover,
+.textoLogo:hover {
+	color: #bcbcbc;
+}
+
+/* No se que tan criminal es esto, pero no encontre otra opcion, esto se hace para solucionar el problema que si se presionaba el boton la letra se ponia negra */
+.nav-link:not(:hover) {
+	color: #f5f3f7;
+}
+
+.dropdown-menu {
+	background-color: transparent;
+	border: none;
+}
+
+.dropdown-item {
+	color: #f5f3f7;
+	background-color: #522863;
+
+	border: solid 2px #f5f3f7;
+	border-radius: 15px;
+	margin: 3px;
+	height: auto;
+}
+
+.dropdown-item:hover {
+	color: #bcbcbc;
+	background-color: #522863;
+}
+
+.bannerEstatico:hover {
+	transform: scale(1.01);
+}
+
+/* Seccion Noticias */
+.enlace:hover {
+	transform: scale(1.01);
+}
+
+/* Catalogo Productos */
+.filtros {
+	border-radius: 30px / 35px;
+	background-color: lightgrey;
+	width: 40vh;
+}
+
+/* Formato Tabla(Reproducciones Personalizadas) */
+.confTabla {
+	width: 70%;
+	border: solid 3px;
+	border-radius: 10px;
+	overflow: hidden;
+	text-align: center;
+}
+
+.primeraColumna {
+	text-align: left;
+}
+
+.encabezadoTabla {
+	height: 40px;
+}
+
+.encabezadoTabla th {
+	width: 11%;
+}
+
+.cuerpoTabla {
+	background-color: #b8aec8;
+}
+
+/* Formato Formulario */
+.formularioJuegos {
+	max-width: 600px;
+	min-width: 400px;
+	/* background-color: #B8AEC8; */
+	border: solid #3c345c;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.formularioEncargoJuego {
+	max-width: 600px;
+	min-width: 400px;
+	/* background-color: #B8AEC8; */
+	border: solid #3c345c;
+	border-radius: 10px;
+	padding: 10px;
+	text-align: start;
+}
+
+.entradaNormal {
+	display: block;
+	padding: 2px 0;
+	width: 100%;
+}
+
+.formularioJuegos p {
+	margin-top: 5px;
+	margin-bottom: 0;
+}
+
+.boton,
+.btn {
+	background-color: #d30cb8;
+	margin-top: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	width: auto;
+}
+
+.btn:hover {
+	background-color: #d30cb8;
+}
+
+/* Imagenes Articulos */
+.seccionPrincipal .imagenArticulo {
+	display: flex;
+	justify-content: center;
+}
+
+.card {
+	width: fit-content;
+	height: fit-content;
+	padding: 0;
+	text-align: center;
+}
+
+/* Imagenes Articulos */
+.imagenArticulo img {
 	width: 250px;
 }
+
+/* Noticias */
+.imagenNoticia {
+	align-self: center;
+	width: 100%;
+}
+
+.articulo .imagenNoticia {
+	width: 50%;
+}
+
+.contenedorVideo {
+	width: fit-content;
+}
+
+/* Footer */
+.footer {
+	background-color: #b8aec8;
+}
+
+/* ------------------------------------------------------------------------ */
+/* */
+/* Comando Criminal(BORRAR)*/
+
+
