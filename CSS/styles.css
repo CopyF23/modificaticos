@@ -158,7 +158,6 @@ body {
 .seccionPrincipal {
 	display: flex;
 	flex-wrap: wrap;
-	align-content:start;
 }
 
 /* Sección Noticias */
