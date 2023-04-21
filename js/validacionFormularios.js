@@ -48,7 +48,7 @@ function promtFormularioExito() {
 // Un promt que muestra un pequeño texto e inserta en html una etiqueta de video
 function promtFormularioBroma() {
 	Swal.fire({
-		title: 'You have been rickrolled',
+		title: 'Nadie lee los terminos y condiciones',
 		html:
 			'<video class="video" id="video1" src="/video/video1_cortado.mp4"></video>',
 		showConfirmButton: true,
