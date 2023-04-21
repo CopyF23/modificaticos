@@ -164,53 +164,138 @@
 					</p>
 					<div class="collapse" id="formularioEncargarJuego">
 						<div class="card card-body">
-							<!-- Inicio Formulario -->
-							<form action="" class="formularioEncargoJuego">
-								<!-- Cuadro que rodea el formulario -->
-								<fieldset>
-									<!-- Pequeña leyenda sobre el formulario -->
-									<legend>Formulario Personalidad!!!</legend>
-									<!-- Nombre -->
-									<label class="entradaNormal" for="nombre">Nombre: </label>
-									<input class="entradaNormal" type="text" id="nombre" required />
 
-									<!-- Apellido 1 -->
-									<label class="entradaNormal" for="apellido1">Apellido 1: </label>
-									<input class="entradaNormal" type="text" id="apellido1" required />
+							<form action="" class="formulario" id="formulario">
+								<!-- Creamos un DIV que encierra cada entrada del formulario -->
+								<!-- Grupo: Nombre -->
+								<div class="formulario__grupo" id="grupo__nombre">
+									<label for="nombre" class="formulario__label">Nombre</label>
+									<div class="formulario__grupo-input">
+										<input type="text" name="nombre" class="formulario__input" id="nombre"
+											placeholder="Fulano">
+										<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+									</div>
+									<p class="formulario__input-error">El nombre solo puede contener letras</p>
+								</div>
 
-									<!-- Apellido 2 -->
-									<label class="entradaNormal" for="apellido2">Apellido 2: </label>
-									<input class="entradaNormal" type="text" id="apellido2" required />
+								<!-- Grupo: Apellido 1 -->
+								<div class="formulario__grupo" id="grupo__apellido1">
+									<label for="apellido1" class="formulario__label">Apellido 1</label>
+									<div class="formulario__grupo-input">
+										<input type="text" name="apellido1" class="formulario__input" id="apellido1"
+											placeholder="Dee">
+										<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+									</div>
+									<p class="formulario__input-error">Los campos de apellido solo puede contener letras
+									</p>
+								</div>
 
-									<!-- Fecha Nacimiento -->
-									<label class="entradaNormal" for="fechaNacimiento">Fecha Nacimiento: </label>
-									<input class="entradaNormal" type="date" id="fechaNacimiento" required />
+								<!-- Grupo: Apellido 2 -->
+								<div class="formulario__grupo" id="grupo__apellido2">
+									<label for="apellido2" class="formulario__label">Apellido 2</label>
+									<div class="formulario__grupo-input">
+										<input type="text" name="apellido2" class="formulario__input" id="apellido2"
+											placeholder="de la Trinidad">
+										<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+									</div>
+									<p class="formulario__input-error">Los campos de apellido solo puede contener letras
+									</p>
+								</div>
 
-									<!-- Correo -->
-									<label class="entradaNormal" for="correo">Correo: </label>
-									<input class="entradaNormal" type="text" id="correo" required />
+								<!-- Grupo: Fecha Nacimiento -->
+								<div class="formulario__grupo" id="grupo__fechaNacimiento">
+									<label for="fechaNacimiento" class="formulario__label">Fecha de Nacimiento</label>
+									<div class="formulario__grupo-input">
+										<input type="date" name="fechaNacimiento" class="formulario__input"
+											id="fechaNacimiento" value="2023-04-19">
+										<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+									</div>
+									<p class="formulario__input-error">La fecha de nacimiento no puede ser mayor que la
+										fecha actual</p>
+								</div>
 
-									<!-- Numeros Tarjeta -->
-									<label class="entradaNormal" for="numeroTarjeta">Serie 16 numeros magicos al frente
-										de tu tarjeta de credito: </label>
-									<input class="entradaNormal" type="text" maxlength="16" id="numeroTarjeta"
-										required />
+								<!-- Grupo: Correo Electronico -->
+								<div class="formulario__grupo" id="grupo__correo">
+									<label for="correo" class="formulario__label">Correo Electronico</label>
+									<div class="formulario__grupo-input">
+										<!-- Se coloca un type email, de esta forma el navegador deberia hacer una pequeña comprobacion de que el correo sea valido -->
+										<input type="email" name="correo" class="formulario__input" id="correo"
+											placeholder="correo@mail.com">
+										<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+									</div>
+									<p class="formulario__input-error">El correo solo puede contener letras, numeros y
+										guion bajo</p>
+								</div>
 
-									<!-- Fecha Nacimiento -->
-									<label class="entradaNormal" for="fechaVencimiento">Fecha Vencimiento de la tarjeta:
-									</label>
-									<input class="entradaNormal" type="date" id="fechaVencimiento" required />
+								<!-- Grupo: Numeros Tarjeta -->
+								<div class="formulario__grupo" id="grupo__numerosTarjeta">
+									<label for="numerosTarjeta" class="formulario__label">16 numeros al frente de tu
+										tarjeta</label>
+									<div class="formulario__grupo-input">
+										<input type="text" name="numerosTarjeta" class="formulario__input"
+											id="numerosTarjeta" minlength="16" maxlength="16">
+										<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+									</div>
+									<p class="formulario__input-error">La serie de numeros no puede contener letras ni
+										caracteres especiales</p>
+								</div>
 
-									<!-- Numeros Tarjeta -->
-									<label class="entradaNormal" for="numeroDetrasTarjeta">Tres numeros detras de la
-										tarjeta: </label>
-									<input class="entradaNormal" type="text" maxlength="3" id="numeroDetrasTarjeta"
-										required />
+								<!-- Grupo: Fecha Vencimiento Tarjeta -->
+								<div class="formulario__grupo" id="grupo__fechaVencimientoTarjeta">
+									<label for="fechaVencimientoTarjeta" class="formulario__label">Fecha Vencimiento de
+										la tarjeta</label>
+									<div class="formulario__grupo-input">
+										<input type="date" name="fechaVencimientoTarjeta" class="formulario__input"
+											id="fechaVencimientoTarjeta" value="2023-04-19">
+										<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+									</div>
+									<p class="formulario__input-error">La fecha de vencimiento no puede ser menor a la
+										fecha actual</p>
+								</div>
 
-									<!-- Botón Enviar -->
-									<input class="entradaNormal boton" type="submit" value="Enviar" />
-								</fieldset>
+								<!-- Grupo: Codigo Seguridad -->
+								<div class="formulario__grupo" id="grupo__codigoSeguridad">
+									<label for="codigoSeguridad" class="formulario__label">Tres numeros detras de la
+										tarjeta</label>
+									<div class="formulario__grupo-input">
+										<input type="text" name="codigoSeguridad" class="formulario__input"
+											id="codigoSeguridad" placeholder="xxx" minlength="3" maxlength="3">
+										<i class="formulario__validacion-estado fa-solid fa-circle-xmark"></i>
+									</div>
+									<p class="formulario__input-error">El codigo no puede contener letras ni caracteres
+										especiales</p>
+								</div>
+
+								<!-- Grupo: terminos y condiciones -->
+								<div class="formulario__grupo" id="grupo__terminos">
+									<div id="grupo__terminos">
+										<!-- Como pueden notar, este label no lleva for, esto porque vamos a colocar el input dentro de mismo -->
+										<label class="formulario__label">
+											<input type="checkbox" name="terminos" id="terminos"
+												class="formulario__checkbox">
+											Acepto los <span class="negrita enlaceFalso"
+												onclick="promtFormularioBroma();"> terminos y condiciones</span>
+										</label>
+									</div>
+								</div>
+
+								<!-- Mensaje Error -->
+								<div class="formulario__mensaje" id="formulario__mensaje">
+									<p>
+										<i class="fa-solid fa-triangle-exclamation"></i>
+										<span class="negrita"> Error</span> Favor llenar el formulario correctamente
+									</p>
+
+								</div>
+
+								<!-- Boton Enviar -->
+								<div class="formulario__grupo formulario__grupo-btn-enviar" id="grupo__usuario">
+									<button type="submit" class="formulario__btn"
+										onclick="revisarComprobacionesFormulariosNoticia3();">Enviar</button>
+								</div>
+
 							</form>
+
 						</div>
 					</div>
 				</div>
@@ -305,14 +390,27 @@
 		</footer>
 	</div>
 
+	<!-- <video class="video" id="video1" src="/video/video1_cortado.mp4"></video> -->
+
+
 	<!-- Importar JS -->
 	<!-- Importar Jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+	<!-- Importar JSloader -->
+	<script src="/js/loader.js"></script>
+
+	<!-- Importar Validacion Formularios -->
+	<script src="/js/validacionFormularios.js"></script>
+
+	<!-- Importar Sweer Alert 2 -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 	<!-- Bootstrap JS -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
 		crossorigin="anonymous"></script>
+
 </body>
 
 </html>

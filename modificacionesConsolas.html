@@ -56,7 +56,7 @@
 	<script src="https://kit.fontawesome.com/4f25630045.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="prepararCheck()">
 	<div class="cuerpoCatalogo">
 		<!-- Header -->
 		<!-- Consiste en una barra que cubre todo el ancho del navegador, muestra el logo de la empresa acompañado de 
@@ -157,77 +157,96 @@
 		<!-- Muestra una lista con una serie de check que se reparten en forma de columna 
 			Estos eliminan contenido de la pagina de catalogo si estan activos
 			De momento no estan activos, pero se espera su implementación en un futuro cercano -->
-		<div class="filtros"></div>
+		<div class="filtros">
+			<!-- Iconito que indica que esta seccion es de filtros -->
+			<div class="filtros__icono">
+				<p class="filtros__icono-texto">Filtros</p>
+			</div>
+				
+			<!-- Grupo Modificaciones Esteticas -->
+			<label class="filtros__label">
+				<input type="checkbox" name="filtroModEsteticas" id="filtroModEsteticas"
+					class="filtros__checkbox" checked>
+				Modificaciones Esteticas
+			</label>
+
+			<!-- Grupo Modificaciones Esteticas -->
+			<label class="filtros__label">
+				<input type="checkbox" name="filtroModCalidadVida" id="filtroModCalidadVida"
+					class="filtros__checkbox" checked>
+				Modificaciones Calidad de Vida
+			</label>
+		</div>
 
 		<!-- Catalogo Productos -->
 		<!-- Se muestran una serie de cuadros uno a la par del otro. Cada cuadro representa un producto. Cada producto debe tener una imagen y un titulo que lo describa -->
 		<!-- Cuadro Productos -->
 		<div class="productos">
 			<!-- Producto 1 -->
-			<div class="cuadroProducto">
+			<div class="cuadroProducto" id="modCalidadVida1">
 				<img class="imagenProducto" src="/images/modificacionesEsteticasCalidadVida/3dsTipoC.webp"
 					alt="Producto 1" />
 				<p class="textoProducto">Alimentacion 3ds Tipo C</p>
 			</div>
 
 			<!-- Producto 2 -->
-			<div class="cuadroProducto">
+			<div class="cuadroProducto" id="modEstetica1">
 				<img class="imagenProducto" src="/images/modificacionesEsteticasCalidadVida/botonesLedGBA(5000).webp"
 					alt="Producto 2" />
 				<p class="textoProducto">Botones Led GBA</p>
 			</div>
 
 			<!-- Producto 3 -->
-			<div class="cuadroProducto">
+			<div class="cuadroProducto" id="modEstetica2">
 				<img class="imagenProducto" src="/images/modificacionesEsteticasCalidadVida/cambioCaratulaGBA.webp"
 					alt="Producto 3" />
 				<p class="textoProducto">Cambio Caratula GBA Transparente</p>
 			</div>
 
 			<!-- Producto 4 -->
-			<div class="cuadroProducto">
+			<div class="cuadroProducto" id="modEstetica3">
 				<img class="imagenProducto"
 					src="/images/modificacionesEsteticasCalidadVida/cambioCaratulaGBA1(2000).webp" alt="Producto 4" />
 				<p class="textoProducto">Cambio Caratula Opaca</p>
 			</div>
 
 			<!-- Producto 5 -->
-			<div class="cuadroProducto">
+			<div class="cuadroProducto" id="modCalidadVida2">
 				<img class="imagenProducto"
 					src="/images/modificacionesEsteticasCalidadVida/cambioParlanteColor(1000).webp" alt="Producto 5" />
 				<p class="textoProducto">Parlante Color LED</p>
 			</div>
 
 			<!-- Producto 6 -->
-			<div class="cuadroProducto">
+			<div class="cuadroProducto" id="modEstetica4">
 				<img class="imagenProducto" src="/images/modificacionesEsteticasCalidadVida/customCaseGBC(10000).webp"
 					alt="Producto 6" />
 				<p class="textoProducto">Cambio Caratula GBC</p>
 			</div>
 
 			<!-- Producto 7 -->
-			<div class="cuadroProducto">
+			<div class="cuadroProducto" id="modCalidadVida3">
 				<img class="imagenProducto" src="/images/modificacionesEsteticasCalidadVida/customScreenGBC(50000).webp"
 					alt="Producto 7" />
 				<p class="textoProducto">Cambio Pantalla GBC</p>
 			</div>
 
 			<!-- Producto 8 -->
-			<div class="cuadroProducto">
+			<div class="cuadroProducto" id="modCalidadVida4">
 				<img class="imagenProducto" src="/images/modificacionesEsteticasCalidadVida/modificacionTipoCGBA.webp"
 					alt="Producto 8" />
 				<p class="textoProducto">Entrada Alimentacion GBA SP</p>
 			</div>
 
 			<!-- Producto 9 -->
-			<div class="cuadroProducto">
+			<div class="cuadroProducto" id="modCalidadVida5">
 				<img class="imagenProducto" src="/images/modificacionesEsteticasCalidadVida/n64TipoCRecortado.png"
 					alt="Producto 9" />
 				<p class="textoProducto">Alimentacion N64 Tipo C</p>
 			</div>
 
 			<!-- Producto 10 -->
-			<div class="cuadroProducto">
+			<div class="cuadroProducto" id="modCalidadVida6">
 				<img class="imagenProducto" src="/images/modificacionesEsteticasCalidadVida/snesTipoC.webp"
 					alt="Producto 10" />
 				<p class="textoProducto">Alimentacion SNES Tipo C</p>
@@ -310,10 +329,22 @@
 			<!-- Fin Cuadro Legal -->
 		</footer>
 	</div>
+	
+	<!-- Importar JS -->
+	<!-- Importar Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+	<!-- Importar JSloader -->
+    <script src="/js/loader.js"></script>
+
+	<!-- Importar JSloader -->
+    <script src="/js/filtros.js"></script>
+
 	<!-- Bootstrap JS -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
 		crossorigin="anonymous"></script>
+
 </body>
 
 </html>
