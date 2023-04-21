@@ -7,6 +7,8 @@
 body {
 	margin: 0px;
 	background-color: #f5f3f7;
+
+	cursor: url(/images/imagenesVarias/cursor.cur), auto;
 }
 /* ------------------------------------------------------------------------ */
 
@@ -78,11 +80,14 @@ body {
 /* Contenido Previo al Catalogo */
 .cuerpoCatalogo .informacionImportante {
 	grid-area: informacionImportante;
+	margin-left: 10vw;
 }
 
 .cuerpoCatalogo .filtros {
 	grid-area: filtros;
 	margin-left: 10vw;
+
+	max-width: 300px;
 }
 
 /* Catalogo Productos */
@@ -155,7 +160,7 @@ body {
 /* ------------------------------------------------------------------------ */
 /* Configuración "display:flex" para elementos dentro del Grid*/
 /* Index */
-.seccionPrincipal {
+.cuerpoPagina .seccionPrincipal {
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -191,8 +196,6 @@ body {
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	width: fit-content;
-	height: auto;
 }
 
 .articulo {
@@ -273,18 +276,21 @@ body {
 
 /* Productos */
 .cuadroProducto {
-	flex: 3;
+  flex: 3;
 	background-color: white;
-	height: auto;
 	border: solid darkgrey 2px;
 	border-radius: 10px;
 	text-align: center;
 	margin: 10px;
+  padding: 10px;
+
+  width: 250px;
+	height: auto;
 }
 
 .imagenProducto {
-	width: 200px;
-	max-height: 200px;
+	width: 150px;
+	height: 150px;
 }
 
 /* Mantenimiento Consolas */
@@ -365,16 +371,29 @@ body {
 
 	/* Tamaño elementos Pagina Informacion General*/
 	.cuerpoInformacionGeneral .seccionPrincipal {
-		margin-left: 0%;
+		margin-left: 3%;
+		margin-right: 3%;
 	}
 
 	.cuerpoInformacionGeneral .aNoticias {
-		margin: 0%;
+		margin-left: auto;
 	}
 
 	/* Tamaño elementos Pagina Catalogo*/
+	.cuerpoCatalogo .informacionImportante {
+		width: 100%;
+		margin-left: 3%;
+	}
+
 	.cuerpoCatalogo .filtros {
-		margin-left: 0%;
+		width: 200px;
+		padding: 5px;
+		margin-left: 3%;
+	}
+
+	.cuerpoCatalogo .filtros__icono {
+		margin-top: 10px;
+		width: 100px;
 	}
 
 	.cuerpoCatalogo .productos {
@@ -409,6 +428,10 @@ body {
 .textoBanner {
 	color: whitesmoke;
 	font-size: 40px;
+}
+
+.cuerpoInformacionGeneral .seccionPrincipal {
+	align-self: start;
 }
 
 .seccionPrincipal .textoTitulo {
@@ -457,6 +480,20 @@ body {
 
 .cuerpoNoticia .textoNoticia {
 	font-size: 1.3rem;
+}
+
+.negrita {
+	font-weight: bold;
+}
+
+.enlaceFalso {
+	color: #3366BB;
+  text-decoration: underline;
+	cursor: pointer;
+}
+
+.enlaceFalso:hover {
+  color: #1851ac;
 }
 
 /* ------------------------------------------------------------------------ */
@@ -541,11 +578,70 @@ body {
 	transform: scale(1.01);
 }
 
+/* Elementos Colapsables */
+.seccionPrincipal .card {
+	background-color: transparent;
+	border: none;
+}
+
+/* Configuracion Imagenes */
+.contenedorMapas {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.seccionPrincipal .imagenArticulo {
+	width: 400px;
+	display: block;
+
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+}
+
+.seccionPrincipal .mapaArticulo {
+	width: 400px;
+	display: block;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* Catalogo Productos */
 .filtros {
-	border-radius: 30px / 35px;
-	background-color: lightgrey;
 	width: 40vh;
+
+	border-radius: 30px / 35px;
+	background-color: #5c2c6d;
+	color: whitesmoke;
+
+	border: solid #292244;
+	padding: 20px;
+}
+
+.filtros__icono {
+	width: 200px;
+	padding: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 15px;
+
+	background-color: #d30cb8;
+	box-shadow: 3px 5px #5d0552;
+	border-radius: 15px;
+}
+
+.filtros__icono-texto {
+	font-size: larger;
+	margin: 0;
+	text-align: center;
+}
+
+.filtros__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
 }
 
 /* Formato Tabla(Reproducciones Personalizadas) */
@@ -573,26 +669,287 @@ body {
 	background-color: #b8aec8;
 }
 
+/* Imagenes Articulos */
+.card {
+	width: fit-content;
+	height: fit-content;
+	padding: 0;
+	text-align: center;
+}
+
+.productoDesactivado {
+	display: none;
+}
+
+.imagenArticulo img {
+	width: 400px;
+}
+
+/* Noticias */
+.imagenNoticia {
+	align-self: center;
+	width: 100%;
+}
+
+.articulo .imagenNoticia {
+	width: 50%;
+}
+
+.contenedorVideo {
+	width: fit-content;
+}
+
+/* Formularios */
+#formularioEncargarJuego .card {
+	background-color: #f5f3f7;
+	border: none;
+}
+
+.boton,
+.btn {
+	background-color: #d30cb8;
+	margin-top: 10px;
+	padding: 5px;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	width: auto;
+}
+
+.btn:hover {
+	background-color: #8c097a;
+}
+
+/* Video */
+.video {
+	width: 100%;
+}
+
+/* Footer */
+.footer {
+	background-color: #b8aec8;
+}
+
+/* Otros */
+.elementoOculto {
+	display: none;
+}
+
+/* ------------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------------ */
 /* Formato Formulario */
-.formularioJuegos {
-	max-width: 600px;
+/* Configuraciones Estetico y Formato */
+.formulario {
+	max-width: 700px;
 	min-width: 400px;
-	/* background-color: #B8AEC8; */
-	border: solid #3c345c;
-	border-radius: 10px;
-	padding: 10px;
-}
 
-.formularioEncargoJuego {
-	max-width: 600px;
-	min-width: 400px;
-	/* background-color: #B8AEC8; */
-	border: solid #3c345c;
+	background-color: #5c2c6d;
+	color: whitesmoke;
+
+	border: solid #292244;
 	border-radius: 10px;
-	padding: 10px;
+	padding: 20px;
 	text-align: start;
+
+	display: grid;
+
+	/* Esto crea dos columas y cada una de estas ocupa una fraccion del espacion en total */
+	grid-template-columns: 1fr 1fr;
+
+	gap: 20px;
 }
 
+/* Aqui no hay nada del otro mundo, solo configuraciones esteticas para el label del formulario */
+.formulario__label {
+	display: block;
+	font-weight: 700;
+	padding: 10px;
+	cursor: pointer;
+}
+
+/* No se le puede poner un label principal a los input radio, por lo que el parrafo que sirve de guia se debe configurar */
+.formulario__grupo .formulario__texto {
+	font-weight: 700;
+	margin: 0;
+	padding: 10px;
+	cursor: pointer;
+}
+
+/* Esta seleccion es para quitar la negrita al texto del input type radio */
+.textoSinModificar {
+	font-weight: normal;
+}
+
+/* El check tenia un margen muy amplio, por lo que se le reduce con el siguiente parametro */
+.formulario__grupo-check .formulario__label {
+	padding: 5px;
+}
+
+/* El input esta en un div, por lo que primer vamos a llamar a dicho div */
+.formulario__grupo-input {
+	/* Esto toma todo el grupo y le da un posicionamiento relativo. Esto nos permitirá despues tomar el icono darle un posisionamiento absoluto de forma que quede acomodado donde debe */
+	position: relative;
+}
+
+.formulario__input,
+.formulario__grupo-select {
+	width: 100%;
+	background-color: #ffffff;
+
+	/* Colocamos el borde en transparente, esto porque solo nos interesa que sea visible para mostrar al usuario si los datos ingresados son correctos/incorrectos */
+	border: 3px solid transparent;
+
+	border-radius: 3px;
+	height: 45px;
+
+	/* Esto se agrega para asegurarnos que el texto quede centrado */
+	line-height: 45px;
+
+	padding: 0 40px 0 10px;
+	transition: 0.3s ease all;
+}
+
+/* Agregamos varios detalles esteticos al input cuando este este se encuentra bajo la atención del usuario. Son detalles simples y cuesta notarlos pero valen la pena */
+.formulario__input:focus {
+	border: 3px solid #d30cb8;
+	outline: none;
+	box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4);
+}
+
+/* Por defecto ocultamos los mensajes de error, mas abajo tenemos una configuracion para una variación de esta clase en la cual esta activa */
+.formulario__input-error {
+	font-size: 12px;
+	margin-bottom: 0;
+	display: none;
+}
+
+/* Esta es solo una de las muchas formas que podemos hacer esto, si vamos a reemplazar la clase se deben volver a copiar todos los parametros. 
+  Pero en caso que pongamos las dos juntas y aprovechar el efecto cascada de CSS no haria falta volver a copiar todo, solo las configuraciones que nos interesa modificar */
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario__validacion-estado {
+	position: absolute;
+	right: 10px;
+	bottom: 15px;
+
+	z-index: 100; /* Para asegurarnos que se muestre arriba de todos los elementos */
+
+	font-size: 16px;
+
+	/* Esto lo va a mantener oculto hasta que lo ocupemos */
+	opacity: 0;
+}
+
+.formulario__checkbox {
+	margin-right: 10px;
+}
+
+#grupo__colorCartucho,
+#grupo__versionEncargar,
+.formulario__grupo-terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar {
+	/* Esto va a hacer que el elemento abarque dos columnas */
+	grid-column: span 2;
+}
+
+/* Si dejamos esto solo el mensaje queda mal, esto porque el parrafo tiene margenes definidos por defecto. Es importante tomar esto en cuenta para proyectos a futuro */
+.formulario__mensaje {
+	height: 45px;
+	line-height: 45px;
+	background-color: #f66060;
+	padding: 0 15px;
+	border-radius: 3px;
+
+	/* Mantenemos el mensaje oculto hasta que se desee mostrar al usuario */
+	display: none;
+}
+
+.formulario__mensaje-activo {
+	display: block;
+}
+
+/* Vamos a tomar el parrafo que esta dentro del div y le quitamos los margenes para que se vea bien */
+.formulario__mensaje p {
+	margin: 0;
+}
+
+/* Vamos a usar display flex para que los elementos se muestren en columna facilmente */
+.formulario__grupo-btn-enviar {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.formulario__btn {
+	height: 45px;
+	line-height: 45px;
+	width: 30%;
+	background-color: #d30cb8;
+	color: whitesmoke;
+	font-weight: bold;
+	border: none;
+	border-radius: 3px;
+	cursor: pointer;
+
+	transition: 0.1s ease all;
+}
+
+.formulario__btn:hover {
+	box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.6);
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+/* La logica es la siguiente, cuando los datos sean correctos vamos a cambiar la clase del grupo por "formulario__grupo-correcto", cuando tienen esta clase toman accion las instrucciones que tenemos acá */
+/* Por ejemplo: a los elementos que tengan la clase "formulario__validacion-estado" que esten dentro de otro elemento tenga la clase "formulario__grupo-correcto" le cambian el color a verde y le modifican la opacidad */
+/* Se ve mucho texto y parece complicado pero en realidad es simple */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: crimson;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: crimson;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid crimson;
+}
+
+/* ----- -----  Mediaqueries ----- ----- */
+/* Esto se puede colocar arriba para mantener un order, pero sería mas confuso y no tendria orden */
+@media screen and (max-width: 800px) {
+	/* Si lo tiramos así no funciona, ya que mas arriba hicimos que dos elementos usaran 2 columnas por defecto, esto causa que se generen 2 columnas de forma implicita, aun cuando estamos indicando lo contrario */
+	.formulario {
+		grid-template-columns: 1fr;
+
+		margin: 0;
+	}
+
+	/* Para solucionar este error debemos hacer que los elementos anteriores solo ocupen una fila */
+	#grupo__colorCartucho,
+	#grupo__versionEncargar,
+	.formulario__grupo-terminos,
+	.formulario__mensaje,
+	.formulario__grupo-btn-enviar {
+		/* Esto va a hacer que el elemento abarque dos columnas */
+		grid-column: span 1;
+	}
+
+	.formulario__btn {
+		width: 100%;
+	}
+}
+
+/*  
 .entradaNormal {
 	display: block;
 	padding: 2px 0;
@@ -618,46 +975,7 @@ body {
 .btn:hover {
 	background-color: #d30cb8;
 }
+*/
 
-/* Imagenes Articulos */
-.seccionPrincipal .imagenArticulo {
-	display: flex;
-	justify-content: center;
-}
-
-.card {
-	width: fit-content;
-	height: fit-content;
-	padding: 0;
-	text-align: center;
-}
-
-/* Imagenes Articulos */
-.imagenArticulo img {
-	width: 250px;
-}
-
-/* Noticias */
-.imagenNoticia {
-	align-self: center;
-	width: 100%;
-}
-
-.articulo .imagenNoticia {
-	width: 50%;
-}
-
-.contenedorVideo {
-	width: fit-content;
-}
-
-/* Footer */
-.footer {
-	background-color: #b8aec8;
-}
-
-/* ------------------------------------------------------------------------ */
 /* */
 /* Comando Criminal(BORRAR)*/
-
-
